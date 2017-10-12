@@ -15,4 +15,4 @@
 * Intro to Redux
 
 ### Lessons
-* [Lesson 1 - Setting up a React Project](lesson_1/README.md)
+* [Lesson 1 - Setting up a React and Webpack](lesson_1/README.md)
