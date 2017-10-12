@@ -1,4 +1,4 @@
-###Prerequisites
+### Prerequisites
 * HTML, CSS
 * Understanding of Basic Javascript
 * Node and npm/yarn
