@@ -12,6 +12,7 @@
 * Conditional Rendering
 * Refs
 * Higher Order Components
+* React Router
 * Intro to Redux
 
 ### Lessons
