@@ -4,9 +4,12 @@
 
 Here are a few resources:
 
-[Official React Tutorial](https://reactjs.org/tutorial/tutorial.html)
+* [Official React Tutorial](https://reactjs.org/tutorial/tutorial.html)
 
-[Egghead](https://egghead.io/technologies/react)
+* [Egghead](https://egghead.io/technologies/react)
+
+* [Webpack Tutorial](https://laracasts.com/series/webpack-for-everyone)
+
 
 
 Setup the React Project:
@@ -18,13 +21,17 @@ Setup the React Project:
 
 ```
 
+### Why do we need a bundler? 
+You can use a bundling tool like webpack,browserify,rollup. They help you write modular code, bundle different files to small packages and can help reduce the loading time drastically.
+
 Create the following directory structure
 ```
 
-|- index.html
-|- webpack.config.js
-|- /src
-	|- index.js
+| - index.html
+| - webpack.config.js
+| - /src
+| ------ || index.js
+| - /dist
 
 ```
 
@@ -47,18 +54,68 @@ Add the following to index.html
 	<title></title>
 </head>
 <body>
-
+	<div id="root">
+		<!-- This is where your React App will get rendered. -->
+	</div>
 </body>
 </html>
 ```
 
+### Configuring Webpack
 
+Installing webpack and loaders
 
+```cmd
+npm install --save-dev babel-core babel-loader webpack
+```
 
+For [ECMAScript 2015](https://babeljs.io/learn-es2015/) and React Presets:
+```cmd
+npm install babel-preset-es2015 babel-preset-react --save-dev
+```
 
+For more options, visit [Webpack Configuration Object](https://webpack.js.org/configuration/)
 
+Add the following to webpack.config.js :
 
+```javascript
 
+const webpack = require('webpack');
+const path = require('path');
 
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR = path.resolve(__dirname, 'src');
 
+const config = {
+	entry: {
+		app: `${APP_DIR}/index.js`,//specifies the entry file for webpack
+	},
+	output: {
+		path: BUILD_DIR,
+		filename: '[name].js',
+		publicPath: '/dist',
+	},
+	module: {
+    loaders: [
+      {
+        test: /\.jsx?/,
+        include: APP_DIR,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.js?/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+	],
+	resolve: {
+    extensions: ['.json', '.js', '.jsx', '.png', '.jpg'],
+    modules: [
+      'node_modules', 'src',
+    ],
+};
 
+module.exports = config;
+
+```
