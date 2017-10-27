@@ -1,4 +1,3 @@
-<div style="background: #000;color: white">
 
 # Lesson 1
 
@@ -121,4 +120,3 @@ const config = {
 module.exports = config;
 
 ```
-</div>
