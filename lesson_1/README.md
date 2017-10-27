@@ -1,4 +1,3 @@
-
 # Lesson 1
 
 ## Where to start?
