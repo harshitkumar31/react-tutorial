@@ -10,7 +10,7 @@ Here are a few resources:
 
 * [Webpack Tutorial](https://laracasts.com/series/webpack-for-everyone)
 
-
+LOL
 
 Setup the React Project:
 
@@ -27,7 +27,7 @@ Create the following directory structure
 | - /src
 | ------ || index.js
 | - /dist
-
+| - .babelrc
 ```
 
 ### Why do we need a bundler? 
@@ -87,35 +87,77 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'src');
 
 const config = {
-	entry: {
-		app: `${APP_DIR}/index.js`,//specifies the entry file for webpack
-	},
-	output: {
-		path: BUILD_DIR,
-		filename: '[name].js',
-		publicPath: '/dist',
-	},
-	module: {
-    loaders: [
-      {
-        test: /\.jsx?/,
-        include: APP_DIR,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.js?/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-	],
-	resolve: {
-    extensions: ['.json', '.js', '.jsx', '.png', '.jpg'],
-    modules: [
-      'node_modules', 'src',
-    ],
+    entry: {
+        app: `${APP_DIR}/index.js`,//specifies the entry file for webpack
+    },
+    output: {
+        path: BUILD_DIR,
+        filename: '[name].js',
+        publicPath: '/dist',
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?/,
+                include: APP_DIR,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.js?/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+            },
+        ],
+    },
+    resolve: {
+        extensions: ['.json', '.js', '.jsx', '.png', '.jpg'],
+        modules: [
+            'node_modules', 'src',
+        ]
+    },
 };
 
 module.exports = config;
 
 ```
+
+[Babelrc Usage](https://babeljs.io/docs/usage/babelrc/)
+
+Add the following to .babelrc:
+```json
+{
+    "presets": [
+        "es2015",
+        "react"
+    ]
+}
+```
+
+And finally modify the package.json file:
+
+```json
+{
+  "name": "lesson_1",
+  "version": "1.0.0",
+  "description": "## Where to start?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack" // Add this
+  },
+  ..........
+}
+
+```
+
+Now run the following command:
+
+```cmd
+npm run build
+
+```
+
+If you have followed the steps, your output should look similar to the below screenshot:
+
+![alt text](res/screen1.png "Screen 1")
