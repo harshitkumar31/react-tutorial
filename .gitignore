@@ -3,5 +3,10 @@ node_modules/*
 */package.json
 lesson_*/*
 
+npm-debug.log
+
+!lesson_1/*
+
 !lesson_*/README.md
 !lesson_*/res
+

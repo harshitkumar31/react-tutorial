@@ -10,10 +10,10 @@
 * Stateless vs Stateful components
 * Component LifeCycle Methods
 * Conditional Rendering
-* Refs
 * Higher Order Components
 * React Router
 * Intro to Redux
 
 ### Lessons
-* [Lesson 1 - Setting up a React and Webpack](lesson_1/README.md)
+* [Lesson 1 - Understanding React Components](lesson_1/README.md)
+* [Lesson Last - Setting up your own React Project](lesson_last/README.md)
