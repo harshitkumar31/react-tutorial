@@ -7,8 +7,8 @@
 * Setting up a React Project
 * Setting up webpack
 * JSX Syntax
-* Stateless vs Stateful components
 * Component LifeCycle Methods
+* Stateless vs Stateful components
 * Conditional Rendering
 * Higher Order Components
 * React Router
