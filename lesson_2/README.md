@@ -63,7 +63,7 @@ class StatefulExample extends Component {
 
         return (<div>
         <h2>{title}</h2>
-        <button>{`I was clicked ${count} times`}</button>{/* Template literal */}
+        <button onClick={this.onClick}>{`I was clicked ${count} times`}</button>{/* Template literal */}
         </div>);
     }
 
