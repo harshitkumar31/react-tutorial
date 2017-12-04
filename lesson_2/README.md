@@ -100,4 +100,31 @@ It all comes down to presentational and container components.
 
 ```
 
-**Container Components**
+**Container Components** know about data,it's shape and where it comes from. They contain the business logic. Container components normally fetch data, reformat data for so that it's easy to be used by presentational components. 
+
+Example:
+
+```javascript
+
+    import React, { Component } from 'react';
+
+    import CommentList from "./CommentList";
+
+    class ListContainer extends Component {
+        constructor() {
+            super();
+            this.state = { list: [] }
+        }
+        
+        componentDidMount() {
+            fetch("/list")
+            .then(res => res.json())
+            .then(list => this.setState({ list }))
+        }
+        
+        render() {
+            return <List items={this.state.list} />;
+        }
+    }
+
+```
