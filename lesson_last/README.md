@@ -1,4 +1,4 @@
-# Lesson 1
+# Lesson 
 
 ## Where to start?
 

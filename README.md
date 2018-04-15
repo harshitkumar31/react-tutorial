@@ -12,7 +12,7 @@
 * Conditional Rendering
 * Higher Order Components
 * React Router
-* Intro to Redux
+* ~~Intro to Redux~~
 
 ### Lessons
 * [Lesson 1 - Understanding React Components](lesson_1/README.md)
