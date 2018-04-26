@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script type="text/javascript">
+    const rootElement = document.getElementById('root');
+    /*
+    Just for reference  
+    const element = document.createElement('div');
+    element.textContent = 'Hello World';
+    element.className = 'title';
+    rootElement.appendChild(element);
+    /**/
+
+    const element = React.createElement(
+      'div',
+      { className: 'title' },
+      'Hello World'
+    );
+    // console.log(element);
+    ReactDOM.render(element, rootElement);
+
+    /*
+    Check the props (especially children) for the element
+    Notice that we can pass an array to the children
+    /**/
+  </script>
+</body>
+
+</html>
