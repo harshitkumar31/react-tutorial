@@ -18,4 +18,5 @@
 * [Lesson 1 - Understanding React Components](lesson_1/README.md)
 * [Lesson 2 - Props and State](lesson_2/README.md)
 * [Lesson 3 - Conditional Rendering, Handling Events](lesson_3/README.md)
+* [Lesson 4 - Routing](lesson_4/README.md)
 * [Lesson Last - Setting up your own React Project](lesson_last/README.md)
