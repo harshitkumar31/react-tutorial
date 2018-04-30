@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+  babel-->
+  <script type="text/javascript">
+    const rootElement = document.getElementById('root');
+    /*
+    Just for reference
+    const element = React.createElement(
+      'div',
+      { className: 'title' },
+      'Hello World'
+    );
+    /**/
+
+    const element = <div className="title">Hello World</div>
+    // console.log(element);
+    ReactDOM.render(element, rootElement);
+
+    /*
+    const blogTitle = 'What the JSX???'
+    const blogContent = `This funny tag syntax is neither a string nor HTML. It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.`
+
+    const blog = (
+      <div className="blog">
+        <div className="blog--title">{blogTitle}</div>
+        <div className="blog--content">{blogContent}</div>
+      </div>
+    )
+    
+    ReactDOM.render(blog, rootElement);
+    /**/
+
+    /*
+    You would normally have a dev environment setup to
+    do the transpiling of babel to JSX.
+    /**/
+  </script>
+</body>
+
+</html>

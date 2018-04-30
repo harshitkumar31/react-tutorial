@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello</title>
+  <!-- <link rel="stylesheet" href="assets/style.css"> -->
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+
+    const blogComp = ({title, content}) => (
+      <div className="blog">
+        <h2 className="blog--title">{title}</h2>
+        <p className="blog--content">{content}</p>
+      </div>
+    )
+
+    const blogs = (
+      <div className="blog--wrap">
+        {
+          blogComp({
+            title: 'Hello World',
+            content: 'React is a JavaScript library, and so we’ll assume you have a basic understanding of the JavaScript language.'
+          })
+        }
+        {
+          blogComp({
+            title: 'Thinking in React',
+            content: 'One of the many great parts of React is how it makes you think about apps as you build them.'
+          })
+        }
+      </div>
+    )
+      
+    /*
+    <BlogComp
+      title="Lifting State Up"
+      content="Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor."
+    />
+    /**/
+    /*
+    <BlogComp
+      title="Lifting State Up"
+    />
+      Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
+    </BlogComp>
+    /**/
+    ReactDOM.render(blogs, document.getElementById('root'));
+    /**/
+
+    /*
+    You would normally have a dev environment setup to
+    do the transpiling of babel to JSX.
+    /**/
+  </script>
+</body>
+
+</html>
